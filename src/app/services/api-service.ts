@@ -15,24 +15,34 @@ class ApiService {
       withCredentials: true,
     };
 
-    const response = await fetch(this.baseUrl + endpoint, {
-      method: method,
-      mode: 'cors',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: withCredentials ? 'include' : undefined,
-      body: body && JSON.stringify(body),
-    });
+    try {
+      const response = await fetch(this.baseUrl + endpoint, {
+        method: method,
+        mode: 'cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: withCredentials ? 'include' : undefined,
+        body: body && JSON.stringify(body),
+      });
 
-    if (!response.ok) {
-      // TODO: Pass on error code
-      return { error: 'error fetching' };
+      console.log('HERE');
+
+      if (!response.ok) {
+        // TODO: Pass on error code
+        return { error: 'Failed to fetch' };
+      }
+
+      console.log('HERE 2');
+
+      const json = await response.json();
+
+      return { result: json as T };
+    } catch (error) {
+      console.log('ERROR', error);
+      const typeError = error as TypeError;
+      return { error: typeError.message };
     }
-
-    const json = await response.json();
-
-    return { result: json as T };
   }
 }
 
