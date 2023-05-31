@@ -1,0 +1,31 @@
+.authpage {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+}
+
+.authpage__container {
+  width: 100%;
+  padding: 64px 32px;
+}
+
+.authpage__image-container {
+  display: none;
+}
+
+.authpage__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .authpage__container {
+    width: 50%;
+  }
+
+  .authpage__image-container {
+    display: block;
+    width: 50%;
+  }
+}

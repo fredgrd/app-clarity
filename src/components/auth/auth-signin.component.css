@@ -1,0 +1,29 @@
+.authsigning {
+  height: 100%;
+  width: 100%;
+}
+
+.authsignin__forgot-password-container {
+  display: flex;
+  justify-content: end;
+}
+
+.authsignin__forgot-password-button {
+  border: none;
+  background-color: white;
+
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--primary-text);
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+.authsignin__signin-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 50px;
+}

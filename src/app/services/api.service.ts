@@ -29,8 +29,8 @@ class ApiService {
       console.log('HERE');
 
       if (!response.ok) {
-        // TODO: Pass on error code
-        return { error: 'Failed to fetch' };
+        const error = await response.text();
+        return { error };
       }
 
       console.log('HERE 2');
@@ -39,7 +39,6 @@ class ApiService {
 
       return { result: json as T };
     } catch (error) {
-      console.log('ERROR', error);
       const typeError = error as TypeError;
       return { error: typeError.message };
     }

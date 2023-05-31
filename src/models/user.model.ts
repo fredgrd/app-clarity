@@ -1,4 +1,4 @@
-import { OnboardingStep } from './onboarding-step';
+import { OnboardingStep } from './onboarding-step.model';
 
 export interface User {
   id: string;

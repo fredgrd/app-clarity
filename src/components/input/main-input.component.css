@@ -1,0 +1,54 @@
+.main-input {
+  width: 100%;
+}
+
+.main-input__label {
+  display: block;
+  margin-bottom: 6px;
+
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--primary-text);
+}
+
+.main-input__label-error {
+  color: var(--error-text);
+}
+
+.main-input__input {
+  width: 100%;
+  padding: 12px 16px;
+
+  border-radius: 4px;
+  border: none;
+  outline: var(--primary-gray) solid 2.5px;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--primary-text);
+}
+
+.main-input__input:focus {
+  outline: var(--primary-highlight) solid 2.5px;
+}
+
+.main-input__input-error {
+  outline: var(--error-border) solid 2.5px;
+  background-color: var(--error-background);
+}
+
+.main-input__input-error:focus {
+  outline: var(--error-border) solid 2.5px;
+}
+
+.main-input__message {
+  min-height: 24px;
+  width: 100%;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--error-text);
+}
